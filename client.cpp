@@ -38,6 +38,7 @@ int main()
 	client.sin_family=AF_INET;
 	client.sin_port=htons(10000); // Port no. of server
 	client.sin_addr.s_addr=INADDR_ANY;
+	client.sin_addr.s_addr=inet_addr("20.207.204.223"); // Provide IP address of server
 	bzero(&client.sin_zero,0);
 
 	if((connect(client_socket,(struct sockaddr *)&client,sizeof(struct sockaddr_in)))==-1)
